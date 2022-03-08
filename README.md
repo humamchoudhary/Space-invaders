@@ -116,7 +116,7 @@ To setup this project locally on your computer follow the steps below.
   ```sh
   pip install pygame
   ```
-### ScreenShots
+## ScreenShots
   <strong>Main Menu</strong>:<br>
 <img src="images/MainMenu.jpeg" max-width="auto" height="500" />
 <br>
