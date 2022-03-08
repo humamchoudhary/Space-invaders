@@ -120,10 +120,10 @@ To setup this project locally on your computer follow the steps below.
 
 ## Contribution
 The following are the team members for the project:
-    - [Rafay Qureshi] (www.github.com)
-    - [Talha Khalid] (www.github.com)
-    - [Abrar Ali] (www.github.com)
-    - [Rehan Yousaf] (www.github.com)
+   - [Rafay Qureshi] (www.github.com)
+   - [Talha Khalid] (https://github.com/MuhammadTalha28/sapce_invader_final-year_projrct.git)
+   - [Abrar Ali] (www.github.com)
+   - [Rehan Yousaf] (www.github.com)
 
 
 <!-- CONTACT -->
