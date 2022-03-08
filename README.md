@@ -84,6 +84,8 @@ The following controls are for multiplayer mode:
       - Rigth Arrow "Move down"
       - RALT "Shoot rockets"
       - RCTRL "Shoot bullets"
+  - Genral:
+      - P "Pause/unpause game"
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
