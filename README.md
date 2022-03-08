@@ -58,8 +58,6 @@
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
-![Product Name Screen Shot][product-screenshot2]
-![Product Name Screen Shot][product-screenshot]
 
 A simple space invaders game made with pygthon. 
 The following controls are for single player:
@@ -119,12 +117,27 @@ To setup this project locally on your computer follow the steps below.
   ```sh
   pip install pygame
   ```
+### ScreenShots
+- Main Menu:
+![Main Menu Screen Shot][Menu-img]
+- Second Menu:
+![Second Menu Screen Shot][Menu2-img]
+- Single player: 
+![Single player Screen Shot][sp-img]
+- Multiplayer: 
+![Multiplayer Screen Shot][mp-img]
+- Pause: 
+![Pause Screen Shot][pause-img]
+- Controls:
+![Control Screen Shot][controls-img]
+- Settings:
+![Settings Screen Shot][set-img]
 
 ## Contribution
 The following are the team members for the project:
-   - [Rafay Qureshi] (www.github.com)
-   - [Talha Khalid] (https://github.com/MuhammadTalha28/sapce_invader_final-year_projrct.git)
-   - [Abrar Ali] (www.github.com)
+   - [Rafay Qureshi] (www.github.com/RafayQureshi12)
+   - [Talha Khalid] (https://github.com/MuhammadTalha28)
+   - [Abrar Ali] (www.github.com/abrarbasra)
    - [Rehan Yousaf] (www.github.com)
 
 
@@ -153,5 +166,10 @@ Project Link: [https://github.com/humamchoudhary/Space-invaders](https://github.
 [license-url]: https://github.com/humamchoudhary/Space-invaders/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/humam-choudhary-362278228/
-[product-screenshot]: images/Game.PNG
-[product-screenshot2]: images/Menu.PNG
+[Menu-img]: images/MainMenu.jpeg
+[Menu2-img]: images/Main-Menu2.jpeg
+[sp-img]: images/Singleplayer.jpeg
+[mp-img]: images/Multiplaye.jpeg
+[pause-img]: images/Pause_menu.PNG
+[controls-img]: images/Controls.jpeg
+[set-img]: images/Settings.jpeg
