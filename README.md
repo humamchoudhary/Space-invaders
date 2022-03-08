@@ -15,10 +15,9 @@
     <img src="Assets/Logo.png" alt="Logo" max-width="auto" height="100">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">Space Invaders Reliving The Childhood</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
     <br />
     <a href="https://github.com/humamchoudhary/Space-invaders"><strong>Explore the docs »</strong></a>
     <br />
