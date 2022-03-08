@@ -118,26 +118,34 @@ To setup this project locally on your computer follow the steps below.
   pip install pygame
   ```
 ### ScreenShots
-  <strong>Main Menu</strong>:
+  <strong>Main Menu</strong>:<br>
 <img src="images/MainMenu.jpeg" max-width="auto" height="500" />
+<br>
 <br/>
-  <strong>Second Menu</strong>:
+
+  <strong>Second Menu</strong>:<br/>
 <img src="images/Main-Menu2.jpeg" max-width="auto" height="500" />
 <br/>
-  <strong>Single player</strong>: 
+<br/>
+  <strong>Single player</strong>: <br/>
 <img src="images/Singleplayer.jpeg" max-width="auto" height="500" />
 <br/>
-  <strong>Multiplayer</strong>: 
+<br/>
+  <strong>Multiplayer</strong>: <br/>
 <img src="images/Multiplaye.jpeg" max-width="auto" height="500" />
 <br/>
-  <strong>Pause</strong>: 
+<br/>
+  <strong>Pause</strong>: <br/>
 <img src="images/Pause_menu.PNG" max-width="auto" height="500" />
 <br/>
-  <strong>Controls</strong>:
+<br/>
+  <strong>Controls</strong>:<br/>
 <img src="images/Controls.jpeg" max-width="auto" height="500" />
 <br/>
-  <strong>Settings</strong>:
+<br/>
+  <strong>Settings</strong>:<br/>
 <img src="images/Settings.jpeg" max-width="auto" height="500" />
+<br/>
 <br/>
 
 
