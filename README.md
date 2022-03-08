@@ -118,20 +118,28 @@ To setup this project locally on your computer follow the steps below.
   pip install pygame
   ```
 ### ScreenShots
-- Main Menu:
-![Main Menu Screen Shot][Menu-img]
-- Second Menu:
-![Second Menu Screen Shot][Menu2-img]
-- Single player: 
-![Single player Screen Shot][sp-img]
-- Multiplayer: 
-![Multiplayer Screen Shot][mp-img]
-- Pause: 
-![Pause Screen Shot][pause-img]
-- Controls:
-![Control Screen Shot][controls-img]
-- Settings:
-![Settings Screen Shot][set-img]
+  <strong>Main Menu</strong>:
+<img src="images/MainMenu.jpeg" max-width="auto" height="500" />
+<br/>
+  <strong>Second Menu</strong>:
+<img src="images/Main-Menu2.jpeg" max-width="auto" height="500" />
+<br/>
+  <strong>Single player</strong>: 
+<img src="images/Singleplayer.jpeg" max-width="auto" height="500" />
+<br/>
+  <strong>Multiplayer</strong>: 
+<img src="images/Multiplaye.jpeg" max-width="auto" height="500" />
+<br/>
+  <strong>Pause</strong>: 
+<img src="images/Pause_menu.PNG" max-width="auto" height="500" />
+<br/>
+  <strong>Controls</strong>:
+<img src="images/Controls.jpeg" max-width="auto" height="500" />
+<br/>
+  <strong>Settings</strong>:
+<img src="images/Settings.jpeg" max-width="auto" height="500" />
+<br/>
+
 
 ## Contribution
 The following are the team members for the project:
@@ -166,10 +174,5 @@ Project Link: [https://github.com/humamchoudhary/Space-invaders](https://github.
 [license-url]: https://github.com/humamchoudhary/Space-invaders/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/humam-choudhary-362278228/
-[Menu-img]: images/MainMenu.jpeg
-[Menu2-img]: images/Main-Menu2.jpeg
-[sp-img]: images/Singleplayer.jpeg
-[mp-img]: images/Multiplaye.jpeg
-[pause-img]: images/Pause_menu.PNG
-[controls-img]: images/Controls.jpeg
-[set-img]: images/Settings.jpeg
+[Menu-img]: images/MainMenu.jpeg {width=50%}
+
