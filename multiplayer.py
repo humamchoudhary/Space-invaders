@@ -164,7 +164,7 @@ def Move_rockets(player_one_rockets, player_two_rockets, player_one, player_two)
     for rockets in player_two_rockets:
         rockets.y -= ROCKET_SPEED
         if player_one.colliderect(rockets):
-            pygame.event.post(pygame.event.Event(PLAYER_TWO_HIT_ROCKET))
+            pygame.event.post(pygame.event.Event(PLAYER_ONE_HIT_ROCKET))
             player_two_rockets.remove(rockets)
         elif rockets.y < 0:
             player_two_rockets.remove(rockets)
@@ -172,18 +172,35 @@ def Move_rockets(player_one_rockets, player_two_rockets, player_one, player_two)
 
 def Winner(text):
     winner_text = WINNER_FONT.render(text, 1, TEXT_COLOR)
+    dim_screen = pygame.Surface(WIN.get_size()).convert_alpha()
+    dim_screen.fill((0, 0, 0, 180))
+    WIN.blit(dim_screen, (0, 0))
     WIN.blit(winner_text, (WIDTH//2 - winner_text.get_width() //
                            2, HEIGHT//2 - winner_text.get_height()//2))
 
     pygame.display.update()
 
-    pygame.time.delay(5000)
+    pygame.time.delay(2000)
+
+
+def Pause():
+    dim_screen = pygame.Surface(WIN.get_size()).convert_alpha()
+    dim_screen.fill((0, 0, 0, 100))
+    WIN.blit(dim_screen, (0, 0))
+    WIN.blit(PAUSE_MENU, (WIDTH//2-PAUSE_MENU.get_width() //
+                          2, HEIGHT//2-PAUSE_MENU.get_height()//2))
+    pause_label = WINNER_FONT.render("Paused", 1, TEXT_COLOR)
+    WIN.blit(pause_label, (WIDTH//2-pause_label.get_width() //
+                           2, HEIGHT//2-PAUSE_MENU.get_height()//2+pause_label.get_height()//2))
+    home_btn.Draw_btn()
+    restart_btn.Draw_btn()
+    quit_btn.Draw_btn()
 
 
 def main():  # Main Function
 
     pygame.mixer.music.play()
-
+    win = False
     player_two = pygame.Rect(
         WIDTH//2-PLAYER_ONE_SPACESHIP.get_width()//2, HEIGHT-200, SHIP_WIDTH, SHIP_HEIGHT)
     player_one = pygame.Rect(
@@ -225,18 +242,7 @@ def main():  # Main Function
             pygame.draw.rect(WIN, PLAYER_ONE_BULLET_COLOR, rocket)
 
         if PAUSE:
-            dim_screen = pygame.Surface(WIN.get_size()).convert_alpha()
-            dim_screen.fill((0, 0, 0, 100))
-            WIN.blit(dim_screen, (0, 0))
-            WIN.blit(PAUSE_MENU, (WIDTH//2-PAUSE_MENU.get_width() //
-                                  2, HEIGHT//2-PAUSE_MENU.get_height()//2))
-            pause_label = WINNER_FONT.render("Paused", 1, TEXT_COLOR)
-            WIN.blit(pause_label, (WIDTH//2-pause_label.get_width() //
-                                   2, HEIGHT//2-PAUSE_MENU.get_height()//2+pause_label.get_height()//2))
-            home_btn.Draw_btn()
-            restart_btn.Draw_btn()
-            quit_btn.Draw_btn()
-
+            Pause()
         pygame.display.update()
 
     clock = pygame.time.Clock()
@@ -247,12 +253,13 @@ def main():  # Main Function
 
             if event.type == pygame.QUIT:
                 quit()
-            if home_btn.Draw_btn():
-                menu.Main()
-            if restart_btn.Draw_btn():
-                main()
-            if quit_btn.Draw_btn():
-                quit()
+            if PAUSE:
+                if home_btn.Draw_btn() and PAUSE:
+                    menu.Main()
+                if restart_btn.Draw_btn() and PAUSE:
+                    main()
+                if quit_btn.Draw_btn():
+                    quit()
 
             # Shoot bullets
             if event.type == pygame.KEYDOWN:
@@ -288,31 +295,40 @@ def main():  # Main Function
 
             if event.type == PLAYER_ONE_HIT_BULLET:
                 player_one_health -= 1
+                print("1")
                 BULLET_HIT_SOUND.play()
 
             if event.type == PLAYER_TWO_HIT_BULLET:
+                print("1")
                 player_two_health -= 1
                 BULLET_HIT_SOUND.play()
 
-            if event.type == PLAYER_TWO_HIT_ROCKET:
+            if event.type == PLAYER_ONE_HIT_ROCKET:
                 player_one_health -= 4
                 ROCKET_HIT_SOUND.play()
 
-            if event.type == PLAYER_ONE_HIT_ROCKET:
+            if event.type == PLAYER_TWO_HIT_ROCKET:
                 player_two_health -= 4
                 ROCKET_HIT_SOUND.play()
 
         winner_text = ""
 
         if player_two_health <= 0:
+            win = True
             winner_text = "Player One Wins!"
-
+            PAUSE = False
+            # pygame.time.delay(1000)
+            # menu.Main()
         if player_one_health <= 0:
+            win = True
             winner_text = "Player Two  Wins!"
-
+            PAUSE = False
+            # pygame.time.delay(1000)
+            # menu.Main()
         if winner_text != "":
             Winner(winner_text)
-            break
+            pygame.time.delay(1000)
+            menu.Main()
 
         Move_bullets(player_one_bullets, player_two_bullets,
                      player_one, player_two)
