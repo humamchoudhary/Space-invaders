@@ -140,24 +140,19 @@ def Main():
             if event.type == pygame.QUIT:
                 quit()
             if start_btn.Draw_btn():
-                print("Start")
                 Game_Menu = True
             if settings_btn.Draw_btn():
                 settings.Main()
             if control_btn.Draw_btn():
-                print("Controls")
                 how_to_play.Main()
             if quit_btn.Draw_btn():
-                print("Quit")
                 Menu_run = False
                 quit()
             if back_btn.Draw_btn():
                 Game_Menu = False
             if sngplr_btn.Draw_btn() and Game_Menu:
-                print("Going to Single Player")
                 Singleplayer.Main_SP()
             if mltplr_btn.Draw_btn() and Game_Menu:
-                print("Going to Multiplayer")
                 multiplayer.main()
 
 

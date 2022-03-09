@@ -295,11 +295,9 @@ def main():  # Main Function
 
             if event.type == PLAYER_ONE_HIT_BULLET:
                 player_one_health -= 1
-                print("1")
                 BULLET_HIT_SOUND.play()
 
             if event.type == PLAYER_TWO_HIT_BULLET:
-                print("1")
                 player_two_health -= 1
                 BULLET_HIT_SOUND.play()
 
