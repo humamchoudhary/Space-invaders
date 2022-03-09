@@ -42,10 +42,10 @@ def Set_Draw():
 def Main():
     pygame.mixer.music.play()
     slider_music = Slider(WIN, 250, 100, WIDTH-350, 20, min=0,
-                          max=100, step=1, handleColour=(0, 255, 200))
+                          max=100, step=1, handleColour=(255, 0, 0))
 
     slider_sound = Slider(WIN, 250, 250, WIDTH-350, 20, min=0,
-                          max=100, step=1, handleColour=(0, 255, 200))
+                          max=100, step=1, handleColour=(255, 0, 0))
 
     music_output = TextBox(WIN, WIDTH-70, 85, 50, 50, fontSize=30)
     sound_output = TextBox(WIN, WIDTH-70, 235, 50, 50, fontSize=30)
@@ -64,7 +64,8 @@ def Main():
         SOUND_VOL = slider_sound.getValue()/100
         pygame.mixer.music.set_volume(MUSIC_VOL)
         pygame.mixer.Sound.set_volume(Singleplayer.BULLET_HIT_SOUND, SOUND_VOL)
-        pygame.mixer.Sound.set_volume(Singleplayer.BULLET_SHOOT_SOUND, SOUND_VOL)
+        pygame.mixer.Sound.set_volume(
+            Singleplayer.BULLET_SHOOT_SOUND, SOUND_VOL)
         pygame.mixer.Sound.set_volume(multiplayer.BULLET_HIT_SOUND, SOUND_VOL)
         pygame.mixer.Sound.set_volume(multiplayer.ROCKET_HIT_SOUND, SOUND_VOL)
         pygame.mixer.Sound.set_volume(

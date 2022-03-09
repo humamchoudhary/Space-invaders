@@ -226,7 +226,7 @@ def main():  # Main Function
         player_one_health_text = HEALTH_FONT.render(
             "Health: " + str(player_one_health), 1, TEXT_COLOR)
         WIN.blit(player_two_health_text,
-                 (WIDTH - player_two_health_text.get_width() - 10, 10))
+                 (10, HEIGHT-player_two_health_text.get_height()-20))
         WIN.blit(player_one_health_text, (10, 10))
 
         for bullet in player_two_bullets:
