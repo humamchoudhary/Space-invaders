@@ -1,5 +1,6 @@
 import pygame_widgets
 import pygame
+import Singleplayer
 from pygame_widgets.slider import Slider
 from pygame_widgets.textbox import TextBox
 import menu
@@ -62,6 +63,8 @@ def Main():
         MUSIC_VOL = slider_music.getValue()/100
         SOUND_VOL = slider_sound.getValue()/100
         pygame.mixer.music.set_volume(MUSIC_VOL)
+        pygame.mixer.Sound.set_volume(Singleplayer.BULLET_HIT_SOUND, SOUND_VOL)
+        pygame.mixer.Sound.set_volume(Singleplayer.BULLET_SHOOT_SOUND, SOUND_VOL)
         pygame.mixer.Sound.set_volume(multiplayer.BULLET_HIT_SOUND, SOUND_VOL)
         pygame.mixer.Sound.set_volume(multiplayer.ROCKET_HIT_SOUND, SOUND_VOL)
         pygame.mixer.Sound.set_volume(

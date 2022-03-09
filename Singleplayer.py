@@ -7,6 +7,7 @@ from random import *
 from Buttons import Button
 
 pygame.init()
+pygame.mixer.init()
 pygame.font.init()
 
 # Inisializing the constants
@@ -39,6 +40,11 @@ ENEMY_SHIP_3 = pygame.transform.scale(pygame.image.load(
 ENEMY_SHIP_4 = pygame.transform.scale(pygame.image.load(
     os.path.join('Assets\Ships', 'GalactixRacer.png')), (SHIP_WIDTH, SHIP_HEIGHT)).convert_alpha()
 
+BULLET_SHOOT_SOUND = pygame.mixer.Sound(
+    os.path.join('Assets\Music', 'bullet_hit.mp3'))
+
+BULLET_HIT_SOUND = pygame.mixer.Sound(
+    os.path.join('Assets\Music', 'bullet.wav'))
 
 # Pause Menu Buttons
 HOME_BTN = pygame.transform.scale(pygame.image.load(
@@ -176,6 +182,24 @@ class Player(Ship):
     def Get_rect(self):
         return pygame.Rect(self.x+50, self.y+50, SHIP_WIDTH/2, SHIP_HEIGHT/2)
 
+    def Shoot(self, total_bullets, axis=0):
+        if self.cool_down == 0 and len(self.bullets) < MAX_BULLETS and total_bullets != 0:
+            BULLET_SHOOT_SOUND.play()
+            bullet = Bullet(self.x, self.y, self.bullet_img)
+            self.bullets.append(bullet)
+            total_bullets -= 1
+            self.cool_down = 1
+        return total_bullets
+
+    def Hit_Enemy(self, enemies):
+        for enemy in enemies:
+            if self.collision(enemy):
+                self.health -= 30
+                enemies.remove(enemy)
+
+    def collision(self, obj):
+        return collide(self, obj)
+
     def Move_bullet(self, vel, objs, enemies_killed):
         self.Shoot_cooldown()
         for bullet in self.bullets:
@@ -301,7 +325,9 @@ def Main_SP():
                 high_label = main_font.render("New High Score!", 1, TEXT_COLOR)
                 WIN.blit(high_label, (WIDTH//2-high_score_label.get_width()//2, HEIGHT//2 +
                                       score_label.get_height()+high_score_label.get_height()+high_label.get_height()))
-            # Restart / Return to main Page here
+            pygame.display.update()
+            pygame.time.delay(2000)
+            menu.Main()
 
         if pause:
             dim_screen = pygame.Surface(WIN.get_size()).convert_alpha()
@@ -320,13 +346,12 @@ def Main_SP():
     while Sp_Run:
         clock.tick(FPS)
         Draw_Main(int(passed_time), enemies_killed)
-
+        player.Hit_Enemy(enemies)
         if lives <= 0 or player.health <= 0:
             lost = True
 
         if lost:
-            pygame.time.delay(2000)
-            menu.Main()
+            pass
 
         if len(enemies) == 0:
             level += 1
@@ -351,9 +376,7 @@ def Main_SP():
                 Main_SP()
             if quit_btn.Draw_btn():
                 quit()
-            # home_btn.Draw_btn()
-            # restart_btn.Draw_btn()
-            # quit_btn.Draw_btn()
+
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_p:
                     pause = not pause

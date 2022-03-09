@@ -11,9 +11,6 @@ pygame.init()
 pygame.font.init()
 pygame.mixer.init()
 
-# Importing Game screens
-
-# Button
 
 # Constants
 
@@ -141,7 +138,7 @@ def Main():
         Menu_Draw()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                Menu_run = False
+                quit()
             if start_btn.Draw_btn():
                 print("Start")
                 Game_Menu = True
