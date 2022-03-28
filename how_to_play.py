@@ -3,6 +3,7 @@ import pygame
 from Buttons import Button
 import os
 import menu
+import sys
 
 pygame.font.init()
 pygame.mixer.init()
@@ -75,7 +76,7 @@ def Main():
         events = pygame.event.get()
         for event in events:
             if event.type == pygame.QUIT:
-                quit()
+                sys.exit()
             if back_btn.Draw_btn():
                 menu.Main()
         keys = pygame.key.get_pressed()

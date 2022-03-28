@@ -5,7 +5,7 @@ import multiplayer
 import settings
 import pygame
 import os
-
+import sys
 # Insializing pygame
 pygame.init()
 pygame.font.init()
@@ -138,7 +138,7 @@ def Main():
         Menu_Draw()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                quit()
+                sys.exit()  
             if start_btn.Draw_btn():
                 Game_Menu = True
             if settings_btn.Draw_btn():
@@ -147,7 +147,7 @@ def Main():
                 how_to_play.Main()
             if quit_btn.Draw_btn():
                 Menu_run = False
-                quit()
+                sys.exit()
             if back_btn.Draw_btn():
                 Game_Menu = False
             if sngplr_btn.Draw_btn() and Game_Menu:

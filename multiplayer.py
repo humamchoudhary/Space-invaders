@@ -3,6 +3,7 @@ import menu
 from Buttons import Button
 import pygame
 import os
+import sys
 
 pygame.init()
 pygame.font.init()
@@ -252,14 +253,14 @@ def main():  # Main Function
         for event in pygame.event.get():
 
             if event.type == pygame.QUIT:
-                quit()
+                sys.exit()
             if PAUSE:
                 if home_btn.Draw_btn() and PAUSE:
                     menu.Main()
                 if restart_btn.Draw_btn() and PAUSE:
                     main()
                 if quit_btn.Draw_btn():
-                    quit()
+                    sys.exit()
 
             # Shoot bullets
             if event.type == pygame.KEYDOWN:

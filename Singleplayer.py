@@ -5,6 +5,7 @@ import pygame
 import os
 from random import *
 from Buttons import Button
+import sys
 
 pygame.init()
 pygame.mixer.init()
@@ -369,13 +370,13 @@ def Main_SP():
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                quit()
+                sys.exit()
             if home_btn.Draw_btn():
                 menu.Main()
             if restart_btn.Draw_btn():
                 Main_SP()
             if quit_btn.Draw_btn():
-                quit()
+                sys.exit()
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_p:

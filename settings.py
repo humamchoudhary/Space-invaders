@@ -6,6 +6,7 @@ from pygame_widgets.textbox import TextBox
 import menu
 from Buttons import Button
 import multiplayer
+import sys
 
 pygame.font.init()
 pygame.mixer.init()
@@ -57,7 +58,7 @@ def Main():
         events = pygame.event.get()
         for event in events:
             if event.type == pygame.QUIT:
-                quit()
+                sys.exit()
             if back_btn.Draw_btn():
                 menu.Main()
         MUSIC_VOL = slider_music.getValue()/100
